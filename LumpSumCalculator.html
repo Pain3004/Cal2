@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    <style></style>
+    <script src="https://cdn.jsdelivr.net/gh/formulajs/formulajs@2.9.3/dist/formula.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <!-- <a href="#" class="logo">logo</a> -->
+        <a href="https://www.myfundsip.com/">
+          <img src="https://www.myfundsip.com/wp-content/uploads/2022/07/logo31.png" class="logo">
+        </a>
+        <nav>
+          <div class="close-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <a href="#" class="button-1">Login/Register</a>
+        </nav>
+        <div class="bar-icon">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="overlay"></div>
+      </div>
+    </header>
+    <form name="sipForm" style="width: 100%;">
+      <div class="">
+        <h2 class="headingText" style="text-align: center;margin-top: 50px;margin-bottom: 50px;">
+          <u>Lump Sum Calculator</u>
+        </h2>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="card" style="width: auto;height: 370px;">
+            <div class="sip-calculator-amount">
+              <p style="margin-top: 1.8em;">
+                <label id="amountLabel"> Lump Sum Investment(₹)</label>
+                <input name="Amount" id="inputAmount" type="number" value="5000" step="500" oninput="showValAmount(this.value)" />
+              </p>
+              <input class="amount-slider" name="realAmount" id="myAmount" type="range" value="5000" min="0" max="100000" step="500" />
+            </div>
+            <div class="sip-calculator-year">
+              <p style="margin-top: 1.8em;"> Expected Rate of Return..????(%) <input name="Years" id="inputRoi" type="number" value="12" oninput="showValRoi(this.value)" />
+              </p>
+              <input class="year-slider" name="realRoi" id="myRoi" type="range"value="12" min="0" max="30" step="0">
+            </div>
+            <div class="sip-calculator-roi">
+              <p style="margin-top: 1.8em;"> Number of Years <input name="Retunrs" id="inputYears" type="number" value="10" oninput="showValYears(this.value)" />
+              </p>
+              <input class="roi-slider" name="realYears" id="myYears" type="range"  value="10" min="0" max="30" step="0">
+            </div>
+            <p>
+              <strong style="font-size: 15px;color: #7c7e8c;">Expected Maturity Amount:</strong>
+              <span id="AmtInvest" style="font-size: 15px;color: #46495D;float: right; font-weight: bold;"></span>
+            </p>
+            <div style="display: flex; justify-content: center;margin-top: 17px;">
+              <button class="button-31" role="button">Invest Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card" style="display: flex; justify-content: center; width: auto;height: 370px;">
+            <div>
+              <canvas id="myChart" width="464" height="464" style="display: block; box-sizing: border-box; height: 464px; width: 464px;"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="column2">
+          <div class="card" style="width: auto;height: 370px;">
+            <h3 style="text-align: center;">
+              <u>Explore Other Calculators</u>
+            </h3>
+            <br>
+            <div class="uvp-list">
+              <ul>
+                <li><a href="EMIvsSIP.html"> EMI VS SIP CALCULATOR</a></li>
+                <li><a href="ChildEducation.html">CHILD EDUCATION CALCULATOR</a></li>
+                <li><a href="OffspringMarriageCalculator.html">OFFSPRING MARRIAGE CALCULATOR</a></li>
+                <li><a href="VacationPlanningCalculator.html">VACATION PLANNING CALCULATOR</a></li>
+                <li><a href="SIP_Calculator.html">SIP CALCULATOR</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script src="scripts/LumpSumCalculator.js"></script>
+  </body>
+</html>

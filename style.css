@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+:root {
+    --background-color: white;
+    --vigo-color: #5367FF;
+    --slider-color: #00D09C;
+    --input-number-color: #EBEBEB;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    margin-bottom: 0.9em;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 37.5%;
+    padding: 0 10px;
+  }
+  
+  .column2 {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .column2 {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .headingText{
+    font-family: 'Roboto';
+      font-size: 30px;
+      font-weight: bold;
+      color: #024BAD;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    /* text-align: center; */
+    background-color: #ffffff;
+  }
+
+
+#amountLabel {
+    width: 210px;
+    ;
+}
+
+.sip-calculator {
+    border: 5px solid white;
+    -moz-box-shadow: 0px 0px 5px hsl(15, 2%, 55%);
+    -webkit-box-shadow: 0px 0px 5px hsl(15, 2%, 55%);
+    box-shadow: 0px 0px 10px hsl(0, 0%, 73.9%);
+    padding: 3em;
+    margin: 1em;
+    background-color: white;
+}
+
+.sip-calculator-amount,
+.sip-calculator-year,
+.sip-calculator-roi {
+    margin-bottom: 2.2em;
+    width: 100%;
+}
+
+.amount-slider,
+.year-slider,
+.roi-slider {
+    width: 100%;
+    height: 1px;
+    border-radius: 10px;
+    background: var(--slider-color);
+    outline: none;
+
+}
+
+input[type=range] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 2.5px solid var(--vigo-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 40px;
+    background: white;
+    cursor: pointer;
+    margin-top: 0px;
+
+}
+
+input[type=range]::-moz-range-thumb {
+    border: 2.5px solid var(--vigo-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 40px;
+    background: white;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+    border: 2.5px solid var(--vigo-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 40px;
+    background: white;
+    cursor: pointer;
+}
+
+input[type=number] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    border-style: none;
+    height: 30px;
+    /* margin-left: 20px; */
+    /* margin-right: 10px; */
+    text-align: right;
+    /* padding-bottom: 5px; */
+    margin-top: -5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    /* border-radius: 4px; */
+    float: right;
+}
+
+@media screen and (max-width: 600px) {
+
+    input[type=number] {
+        -webkit-appearance: none;
+        cursor: pointer;
+        border-style: none;
+        height: 30px;
+        /* margin-left: 20px; */
+        /* margin-right: -27px; */
+        text-align: right;
+        margin-top: -21px;
+        /* padding-bottom: 16px; */
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        border-radius: 4px;
+        float: right;
+    }
+
+}
+
+input[type=number]:focus {
+    outline: none;
+    border: 1px solid #3197EE;
+
+}
+
+/* For radio */
+.radio {
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio input[type="radio"]+.radio-label:before {
+    content: '';
+    background: #f4f4f4;
+    border-radius: 100%;
+    border: 1px solid #b4b4b4;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    position: relative;
+    top: -0.2em;
+    margin-right: 1em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.radio input[type="radio"]:checked+.radio-label:before {
+    background-color: #5367FF;
+    box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+
+.radio input[type="radio"]:focus+.radio-label:before {
+    outline: none;
+    border-color: #3197EE;
+}
+
+.radio input[type="radio"]:disabled+.radio-label:before {
+    box-shadow: inset 0 0 0 4px #f4f4f4;
+    border-color: #b4b4b4;
+    background: #b4b4b4;
+}
+
+.radio input[type="radio"]+.radio-label:empty:before {
+    margin-right: 0;
+}
+
+/* Radio End */
+
+@media only screen and (max-width: 325px) {
+    .sip-calculator {
+        height: 560px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: smaller;
+    }
+
+    .sip-calculator {
+        width: 100%;
+        padding: 2em;
+        margin: .1em;
+    }
+}
+
+/*Groww Logo on mobile*/
+@media (max-width: 768px) {
+    .groww-logo {
+        width: 100px;
+        height: 25px;
+    }
+}
+
+
+/* CSS */
+.button-31 {
+    background-color: #024BAD;
+    border-radius: 4px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+    max-width: none;
+    /* min-height: 17px; */
+    /* min-width: 10px; */
+    /* outline: none; */
+    /* overflow: hidden; */
+    /* padding: 9px 20px 8px; */
+    padding-top: 9px;
+    padding-bottom: 9px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 27%;
+  }
+  
+  .button-31:hover,
+  .button-31:focus {
+    opacity: .75;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .button-31 {
+        background-color: #024BAD;
+    border-radius: 4px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+    max-width: none;
+    min-height: 17px;
+    min-width: 10px;
+    outline: none;
+    overflow: hidden;
+    padding: 9px 20px 8px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 40%;
+    margin-top: inherit;
+      }
+      
+      .button-31:hover,
+      .button-31:focus {
+        opacity: .75;
+      }
+
+  }
+
+
+  .button-1 {
+    background-color: #024BAD;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-1:hover,
+  .button-1:focus {
+    background-color: #096df3;
+  }
+
+
+
+
+  header {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  header .container {
+    padding: 1.2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .container .logo {
+    font-size: 1.5rem;
+  }
+  header .container nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  header .container nav a {
+    font-size: 1.2rem;
+    padding: 10px 1rem;
+  }
+  header .container nav a.active {
+    background: #eee;
+    transition: 0.5s;
+    border-radius: 10px;
+  }
+  header .container :is(.bar-icon, .close-icon) {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+  }
+  header .container .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  header .container .overlay.active {
+    display: flex;
+  }
+  
+  /* Media query */
+  @media (width <= 767px) {
+    header .container nav {
+      position: fixed;
+      right: -100%;
+      top: 0;
+      padding-top: 6rem;
+      width: 300px;
+      height: 100vh;
+      flex-direction: column;
+      background: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      z-index: 3;
+      transition: right 0.5s;
+    }
+    header .container nav.active {
+      right: 0;
+    }
+    header .container :is(.bar-icon, .close-icon) {
+      display: flex;
+    }
+    header .container .close-icon {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+    }
+  }
+
+
+  .uvp-list ul {
+    display: inline-block;
+    /* border: solid 1px #bababa; */
+    padding: 1rem 2rem;
+    max-width: 320px;
+  }
+  
+  .uvp-list ul {
+    list-style: none;
+  }
+  
+  .uvp-list ul > li {
+    clear: left;
+    padding: .5rem 0;
+  }
+   
+  .uvp-list ul > li:before {
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    display: block;
+    float: left;
+    margin-left: -1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  
+  .uvp-list ul > li:before { 
+    background: url("https://info.openpath.com/hubfs/checkmark-round-orange.svg");
+    background-size: cover;
+    background-position: center;
+    padding: .15rem;
+  }
+
+
+
+
+
+  #container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+
+
+  section {
+    padding: 50px 0;
+  }
+  article {
+    font: 400 18px 'Lora', Georgia, serif;
+    line-height: 2;
+    color: #505050;
+  }
+
+  #canvas-holder {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  #chartjs-tooltip {
+    opacity: 1;
+    position: absolute;
+    background: rgba(0, 0, 0, .7);
+    color: white;
+    border-radius: 3px;
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease;
+    pointer-events: none;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  
+  .chartjs-tooltip-key {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+  }
+  .canvasjs-chart-credit
+{
+    display: none !important;
+}
